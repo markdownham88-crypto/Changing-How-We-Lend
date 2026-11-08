@@ -1087,6 +1087,79 @@ mark{background:color-mix(in srgb,var(--brass) 40%,transparent);color:inherit;bo
 #pop .pex{font-size:calc(14px * var(--k));line-height:1.5;margin:8px 0;padding:8px 10px;border-radius:8px;background:color-mix(in srgb,var(--violet) 10%,transparent);border-left:3px solid var(--violet)}
 #pop .pex b{display:block;font-size:calc(11px * var(--k));letter-spacing:.07em;text-transform:uppercase;color:var(--violet)}
 #pop .pa{flex-wrap:wrap}
+/* ===== force field v3 ===== */
+.ffdash{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,.8fr);gap:14px;margin-bottom:20px}
+.ffg{padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--ink)}
+.ffgl{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px}.ffgl b{font-size:calc(16px * var(--k))}.ffgl span{font-size:calc(13px * var(--k));color:var(--muted)}
+.ffg .ffmt{position:relative;height:44px}
+.ffg .ffmz{position:absolute;left:0;right:0;top:17px;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--red),var(--amber) 45%,var(--amber) 55%,var(--green))}
+.ffg .ffmc{position:absolute;left:50%;top:8px;width:2px;height:28px;background:var(--text);opacity:.55}
+.ffpuck{position:absolute;top:0;left:50%;transform:translateX(-50%);min-width:58px;height:44px;border-radius:12px;background:var(--ink2);border:3px solid var(--amber);display:grid;place-items:center;box-shadow:var(--shadow);transition:left .8s cubic-bezier(.34,1.56,.64,1),border-color .4s}
+.ffpuck.g{border-color:var(--green)}.ffpuck.r{border-color:var(--red)}.ffpuck b{font-family:var(--serif);font-size:calc(22px * var(--k));color:var(--text)}
+.ffgends{display:flex;justify-content:space-between;gap:8px;margin-top:8px;font-size:calc(12.5px * var(--k));color:var(--muted)}
+.fftt{height:16px;border-radius:8px;background:var(--ink3);overflow:hidden;margin-top:14px}
+.fftt i{display:block;height:100%;width:0;border-radius:8px;transition:width .6s cubic-bezier(.34,1.3,.64,1),background .4s}
+.fftt i.g{background:var(--green)}.fftt i.a{background:var(--amber)}.fftt i.r{background:var(--red);animation:ffstrain .9s ease-in-out infinite alternate}
+@keyframes ffstrain{to{filter:brightness(1.25)}}
+#ffTenT{font-family:var(--mono);color:var(--text)}
+.ffg.spark svg{width:100%;height:54px;display:block}
+.ffhead3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr);gap:14px;margin-bottom:6px;align-items:end}
+.ffch{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:calc(15px * var(--k))}
+.ffch.drive b{color:var(--verd2)}.ffch.restrain{justify-content:flex-end;text-align:right}.ffch.restrain b{color:var(--red)}.ffch.mid{justify-content:center;text-align:center}
+.ffch b{font-size:calc(14px * var(--k));letter-spacing:.07em;text-transform:uppercase}
+.ffsum{font-family:var(--mono);font-size:calc(14px * var(--k));padding:1px 9px;border-radius:999px;border:1.5px solid currentColor}
+.ffch.drive .ffsum{color:var(--verd2)}.ffch.restrain .ffsum{color:var(--red)}
+.fffield{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr);gap:14px}
+.ffcol{display:grid;gap:10px}
+.ffc{padding:11px 13px;border-radius:12px;border:1px solid var(--line);background:var(--ink);transition:border-color .2s,box-shadow .3s;align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.ffc.drive{border-left:4px solid var(--verd2)}.ffc.restrain{border-right:4px solid var(--red)}
+.ffc.hov{border-color:var(--brass)}
+.ffc-h{display:flex;gap:8px;align-items:flex-start}.ffc.restrain .ffc-h{flex-direction:row-reverse;text-align:right}
+.ffid{flex:none;font:700 calc(12px * var(--k)) var(--mono);padding:2px 6px;border-radius:6px;color:var(--ink)}
+.ffc.drive .ffid{background:var(--verd2)}.ffc.restrain .ffid{background:var(--red)}
+.ffc .nm{flex:1;font-size:calc(15px * var(--k));font-weight:600;line-height:1.35;color:var(--text)}
+.ffseg{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.ffseg button{height:30px;border-radius:7px;border:1.5px solid var(--line2);background:var(--ink2);color:var(--muted);font:600 calc(14px * var(--k)) var(--mono);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.ffseg button:hover{border-color:var(--brass);color:var(--text)}
+.ffc.drive .ffseg button.fill{background:color-mix(in srgb,var(--verd2) 28%,var(--ink2));color:var(--text);border-color:color-mix(in srgb,var(--verd2) 55%,var(--line2))}
+.ffc.restrain .ffseg button.fill{background:color-mix(in srgb,var(--red) 26%,var(--ink2));color:var(--text);border-color:color-mix(in srgb,var(--red) 55%,var(--line2))}
+.ffc.drive .ffseg button.on{background:var(--verd2);color:var(--ink);border-color:var(--verd2)}
+.ffc.restrain .ffseg button.on{background:var(--red);color:var(--ink);border-color:var(--red)}
+.ffc.restrain .ffseg{direction:rtl}
+.ffc.flash,.ffa.flash{animation:ffflash .6s}
+@keyframes ffflash{0%{box-shadow:0 0 0 0 var(--brass)}40%{box-shadow:0 0 0 4px var(--brass)}100%{box-shadow:0 0 0 0 transparent}}
+.ffmid{position:relative;display:grid;border-radius:14px;background:linear-gradient(90deg,color-mix(in srgb,var(--red) 7%,var(--ink)),var(--ink) 45%,var(--ink) 55%,color-mix(in srgb,var(--green) 8%,var(--ink)));border:1px solid var(--line)}
+.ffline{position:absolute;top:-8px;bottom:-8px;left:50%;width:4px;margin-left:-2px;background:var(--brass);border-radius:2px;box-shadow:0 0 16px color-mix(in srgb,var(--brass) 70%,transparent);z-index:3;transition:left .9s cubic-bezier(.34,1.56,.64,1)}
+.ffline span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:8px 10px;border-radius:10px;background:var(--brass);color:var(--on-accent);font:700 calc(11.5px * var(--k))/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;text-align:center;white-space:nowrap;box-shadow:var(--shadow)}
+.ffa{position:relative;grid-column:1;align-self:center;height:26px}
+.ffa .shaft{position:absolute;top:0;height:26px;width:var(--w,0%);transition:width .6s cubic-bezier(.34,1.3,.64,1),left .9s cubic-bezier(.34,1.56,.64,1),right .9s cubic-bezier(.34,1.56,.64,1);border-radius:6px;overflow:visible}
+.ffa.drive{z-index:2}.ffa.restrain{z-index:2}
+.ffa.drive .shaft{right:calc(100% - var(--x,50%) + 6px);background:var(--verd2);border-radius:6px 0 0 6px}
+.ffa.restrain .shaft{left:calc(var(--x,50%) + 6px);background:var(--red);border-radius:0 6px 6px 0}
+.ffa.drive .shaft::after{content:"";position:absolute;right:-13px;top:-5px;border:18px solid transparent;border-right:0;border-left:14px solid var(--verd2);border-top-width:18px;border-bottom-width:18px;transform:translateY(-0px)}
+.ffa.restrain .shaft::after{content:"";position:absolute;left:-13px;top:-5px;border:18px solid transparent;border-left:0;border-right:14px solid var(--red)}
+.ffa .shaft::after{top:50%!important;margin-top:-18px}
+.ffa .shaft em{position:absolute;inset:0;border-radius:inherit;overflow:hidden;background:repeating-linear-gradient(90deg,transparent 0 9px,rgba(255,255,255,.32) 9px 12px,transparent 12px 20px);animation:ffchev var(--sp,1.5s) linear infinite}
+.ffa.restrain .shaft em{animation-direction:reverse}
+.ffa .aid{position:absolute;top:50%;transform:translateY(-50%);font:700 calc(11.5px * var(--k)) var(--mono);color:var(--text);white-space:nowrap}
+.ffa.drive .aid{right:calc(100% + 8px)}.ffa.restrain .aid{left:calc(100% + 8px)}
+.ffa.zero .shaft::after,.ffa.zero .shaft em{display:none}.ffa.zero .aid{opacity:.4}
+.ffa.hov .shaft{filter:brightness(1.2);box-shadow:0 0 0 2px var(--text)}
+.ffsim{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px dashed var(--line2)}
+.ffsb{display:flex;gap:8px;flex-wrap:wrap}
+.ffsb button:disabled{opacity:.45;cursor:default}
+.fft{width:100%;max-width:520px;border-collapse:collapse;margin-top:10px;font-size:calc(15px * var(--k))}
+.fft th,.fft td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right}.fft th:first-child,.fft td:first-child{text-align:left}
+.fft th{font-size:calc(12px * var(--k));letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.fft td{font-family:var(--mono)}.fft td:first-child{font-family:var(--sans);font-weight:600}
+.fft td.pos{color:var(--green)}.fft td.neg{color:var(--red)}
+.ffo{grid-template-columns:repeat(4,1fr)!important}
+@media(max-width:900px){.ffdash{grid-template-columns:minmax(0,1fr)}.ffhead3{display:none}.fffield{grid-template-columns:minmax(0,1fr)}.ffmid{order:-1;min-height:0;grid-template-rows:none!important;grid-auto-rows:34px;padding:10px 0}.ffmid .ffa{grid-row:auto!important}.ffcol{grid-template-rows:none!important}.ffc.restrain .ffc-h{flex-direction:row;text-align:left}.ffc.restrain .ffseg{direction:ltr}.ffcol.drive::before{content:"Driving forces — push towards lending well";font-weight:700;color:var(--verd2);font-size:calc(14px * var(--k))}.ffcol.restrain::before{content:"Restraining forces — hold the culture in place";font-weight:700;color:var(--red);font-size:calc(14px * var(--k))}}
+@media(prefers-reduced-motion:reduce){.ffa .shaft em{animation:none}.ffline,.ffa .shaft,.ffpuck{transition:none}}
+.ffmid{overflow:hidden}.ffline{top:0;bottom:0}
+.ffc.restrain .ffseg{direction:ltr}
+@media(max-width:900px){.ffc{grid-row:auto!important}}
+.ffo{grid-template-columns:repeat(4,minmax(0,1fr))!important}.ffo div{min-width:0}.ffo span{font-size:calc(10.5px * var(--k))!important;overflow-wrap:anywhere}@media(max-width:560px){.ffo{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 </style>
 </head>
 <body>
@@ -2870,7 +2943,7 @@ function ffChart(){const row=(s,f)=>`<div class="ffb ${s}"><span class="nm">${es
  const o=$("#ffOut");o.className="verdict "+(bal>2?"rag-g":bal>=-2?"rag-a":"rag-r");
  o.innerHTML=`<b>Driving ${d} · Restraining ${r} · Balance ${bal>0?"+":""}${bal}.</b> ${bal>2?"The change has momentum. Protect it by removing the strongest restrainers before they reassert themselves.":bal>=-2?"Finely balanced: pushing harder will mostly raise resistance.":"The current culture is firmly held. Pressure alone will not move it."} Start by weakening <b>${top.map(t=>esc(t.n.toLowerCase())).join("</b> and <b>")}</b>.${top.filter(t=>t.iv).length?`<div class="tagrow" style="margin-top:8px">${[...new Set(top.flatMap(t=>t.iv||[]))].map(id=>`<button class="tagbtn" data-iv="${id}">${INTERVENTIONS.find(v=>v.id===id).t}</button>`).join("")}</div>`:""}`;
  $$("#ffOut [data-iv]").forEach(b=>b.onclick=()=>openIV(b.dataset.iv))}
-$("#ffAdd").onclick=()=>{const n=$("#ffName").value.trim();if(!n)return toast("Name the force first");FF[$("#ffSide").value].push({id:"c"+Date.now(),n,v:3,custom:1});$("#ffName").value="";LS.set("ff",FF);renderFF();toast("Force added")};
+$("#ffAdd").onclick=()=>{const n=$("#ffName").value.trim();if(!n)return toast("Name the force first");FF[$("#ffSide").value].push({id:"c"+Date.now(),n,v:3,custom:1});$("#ffName").value="";LS.set("ff",FF);LS.set("ff2",FF);renderFF();toast("Force added")};
 $("#ffName").onkeydown=e=>{if(e.key==="Enter")$("#ffAdd").click()};
 
 /* ---------- SYSTEMS LOOPS ---------- */
@@ -3365,44 +3438,70 @@ wrapTerms($("main"));observe();
 /* =====================================================================
    KINETIC REBUILDS — force field, motors
    ===================================================================== */
-/* ---------- FORCE FIELD: tug of war ---------- */
-let ffSimT=null;
+/* ---------- FORCE FIELD v3: classic field diagram, kinetic ---------- */
+const ffSample=()=>({drive:FORCES.drive.map(f=>({...f})),restrain:FORCES.restrain.map(f=>({...f}))});
+FF=LS.get("ff2",null)||ffSample();let ffSimT=null,ffUndo=null,ffHist=LS.get("ffh",[]);
+const ffSave=()=>{LS.set("ff2",FF);LS.set("ff",FF)};
+const ffT=()=>{const {d,r}=ffBal();return {d,r,bal:d-r,t:d+r,max:5*(FF.drive.length+FF.restrain.length)}};
 function ffShell(){if($("#ffBoard"))return;$("#forces .split").insertAdjacentHTML("beforebegin",`<div class="panelbox ffboard" id="ffBoard"></div>`);const c=$("#ffChart");if(c)c.style.display="none"}
-renderFF=function(){ffShell();
- const row=(s,f,i)=>`<div class="ffr ${s}" data-s="${s}" data-i="${i}"><div class="ffrh"><span class="nm">${esc(f.n)}</span><span class="ffv" aria-live="polite">${f.v}</span></div>
-  <div class="ffbar" role="slider" tabindex="0" aria-label="${esc(f.n)} strength" aria-valuemin="0" aria-valuemax="5" aria-valuenow="${f.v}"><div class="pips">${[1,2,3,4,5].map(n=>`<span></span>`).join("")}</div><i class="fl"><em></em></i><b class="tip" aria-hidden="true"></b></div>
-  <div class="ffrc"><button class="stp" data-d="-1" aria-label="Weaken">−</button><button class="stp" data-d="1" aria-label="Strengthen">+</button>${f.how?infoBtn(f.n,(s==="drive"?"How to use this driver: ":"How to weaken this restrainer: ")+f.how):""}${f.custom?`<button class="linkbtn" data-del="1">remove</button>`:""}</div></div>`;
- $("#ffBoard").innerHTML=`<div class="ffmeter"><div class="ffml"><b>Culture held in place</b><span>restrainers win</span></div><div class="ffmt" aria-hidden="true"><div class="ffmz"></div><div class="ffmc"></div><div class="ffpuck" id="ffPuck"><b id="ffBal">0</b><span>balance</span></div></div><div class="ffmr"><b>Moving towards lending well</b><span>drivers win</span></div></div>
- <div class="ffcols"><div class="ffcol drive"><h4>Driving forces <span class="ffsum" id="ffDs"></span></h4><p class="mini muted">Pushing the culture towards lending well →</p>${FF.drive.map((f,i)=>row("drive",f,i)).join("")}</div>
-  <div class="ffwall" aria-hidden="true"><div class="ffblock" id="ffBlock"><span>Current<br>culture</span></div></div>
-  <div class="ffcol restrain"><h4>Restraining forces <span class="ffsum" id="ffRs"></span></h4><p class="mini muted">← Holding the current culture in place</p>${FF.restrain.map((f,i)=>row("restrain",f,i)).join("")}</div></div>
- <div class="ffsim"><span class="mini"><b>Try Lewin's experiment:</b></span><button class="btn sm" id="ffSimW">▶ Weaken the two strongest restrainers</button><button class="btn sm" id="ffSimP">▶ Just push harder on the drivers</button><button class="btn ghost sm" id="ffReset2">Reset</button></div><div class="ffnote" id="ffNote"></div>`;
- $$("#ffBoard .ffr").forEach(r=>{const s=r.dataset.s,i=+r.dataset.i,bar=r.querySelector(".ffbar");
-  const set=v=>{FF[s][i].v=clamp(v,0,5);LS.set("ff",FF);ffUpdate();cockpit()};
-  r.querySelectorAll(".stp").forEach(b=>b.onclick=()=>{ffStop();set(FF[s][i].v+ +b.dataset.d)});
-  let drag=false;const pick=e=>{const rc=bar.getBoundingClientRect();let f=(e.clientX-rc.left)/rc.width;if(s==="restrain")f=1-f;set(Math.round(f*5+.2))};
-  bar.addEventListener("pointerdown",e=>{ffStop();drag=true;bar.setPointerCapture(e.pointerId);pick(e)});bar.addEventListener("pointermove",e=>{if(drag)pick(e)});bar.addEventListener("pointerup",()=>drag=false);
-  bar.addEventListener("keydown",e=>{const k={ArrowRight:s==="drive"?1:-1,ArrowLeft:s==="drive"?-1:1,ArrowUp:1,ArrowDown:-1}[e.key];if(k){e.preventDefault();set(FF[s][i].v+k)}});
-  const del=r.querySelector("[data-del]");if(del)del.onclick=()=>{FF[s].splice(i,1);LS.set("ff",FF);renderFF()};
-  r.addEventListener("pointerenter",()=>r.classList.add("hov"));r.addEventListener("pointerleave",()=>r.classList.remove("hov"))});
- $("#ffSimW").onclick=()=>ffSim("weaken");$("#ffSimP").onclick=()=>ffSim("push");
- $("#ffReset2").onclick=()=>{ffStop();FF={drive:FORCES.drive.map(f=>({...f})),restrain:FORCES.restrain.map(f=>({...f}))};LS.set("ff",FF);renderFF();$("#ffNote").innerHTML="";toast("Forces reset")};
- $("#ffCtrl").innerHTML=`<h4 style="margin-top:0">How to use the board</h4><ul class="tidy mini"><li>Click or drag along any bar, or use − and +, to set a force's strength from 0 to 5.</li><li>The puck at the top shows where the balance sits; the culture block in the middle is pushed by both sides.</li><li>Run the two experiments to see why weakening restrainers works better than pushing harder.</li><li>Add forces specific to your lender below.</li></ul>`;
+renderFF=function(){ffShell();const nd=FF.drive.length,nr=FF.restrain.length,rows=Math.max(nd,nr);
+ const card=(s,f,i)=>`<div class="ffc ${s}" data-s="${s}" data-i="${i}" style="grid-row:${i+1}"><div class="ffc-h"><span class="ffid">${s==="drive"?"D":"R"}${i+1}</span><span class="nm">${esc(f.n)}</span>${f.how?infoBtn(f.n,(s==="drive"?"How to use this driver: ":"How to weaken this restrainer: ")+f.how):""}${f.custom?`<button class="linkbtn" data-del="1" aria-label="Remove ${esc(f.n)}">remove</button>`:""}</div>
+  <div class="ffseg" role="radiogroup" aria-label="Strength of ${esc(f.n)}">${[0,1,2,3,4,5].map(n=>`<button role="radio" data-v="${n}" aria-checked="false">${n}</button>`).join("")}</div></div>`;
+ const arrow=(s,f,i)=>`<div class="ffa ${s}" data-s="${s}" data-i="${i}" style="grid-row:${i+1}"><div class="shaft"><em></em><span class="aid">${s==="drive"?"D":"R"}${i+1}</span></div></div>`;
+ $("#ffBoard").innerHTML=`<div class="ffdash">
+   <div class="ffg"><div class="ffgl"><b>Movement</b><span>where the culture settles</span></div><div class="ffmt"><div class="ffmz"></div><div class="ffmc"></div><div class="ffpuck" id="ffPuck"><b id="ffBal">0</b></div></div><div class="ffgends"><span>← held in place</span><span>moving towards lending well →</span></div></div>
+   <div class="ffg"><div class="ffgl"><b>Tension</b><span>total push and pull people feel</span></div><div class="fftt"><i id="ffTen"></i></div><div class="ffgends"><span id="ffTenT">0</span><span id="ffTenL"></span></div></div>
+   <div class="ffg spark"><div class="ffgl"><b>History</b><span>balance after each change</span></div><svg viewBox="0 0 200 54" id="ffSpark" preserveAspectRatio="none"></svg></div>
+  </div>
+  <div class="ffhead3"><div class="ffch drive"><b>Driving forces</b><span class="ffsum" id="ffDs"></span></div><div class="ffch mid"><span class="mini muted">Arrow length = strength · the gold line is the current culture and moves as the balance changes</span></div><div class="ffch restrain"><span class="ffsum" id="ffRs"></span><b>Restraining forces</b></div></div>
+  <div class="fffield">
+   <div class="ffcol drive" style="grid-template-rows:repeat(${rows},minmax(96px,auto))">${FF.drive.map((f,i)=>card("drive",f,i)).join("")}</div>
+   <div class="ffmid" style="grid-template-rows:repeat(${rows},minmax(96px,auto))"><div class="ffline" id="ffLine"><span>Current<br>culture</span></div>${FF.drive.map((f,i)=>arrow("drive",f,i)).join("")}${FF.restrain.map((f,i)=>arrow("restrain",f,i)).join("")}</div>
+   <div class="ffcol restrain" style="grid-template-rows:repeat(${rows},minmax(96px,auto))">${FF.restrain.map((f,i)=>card("restrain",f,i)).join("")}</div>
+  </div>
+  <div class="ffsim"><div><b>Run Lewin's experiment</b><span class="mini muted"> — each scenario animates step by step; you can undo it.</span></div><div class="ffsb"><button class="btn sm" data-sc="weaken">▶ Weaken the two strongest restrainers</button><button class="btn sm" data-sc="push">▶ Just push harder</button><button class="btn sm" data-sc="both">▶ Weaken, then nudge</button><button class="btn ghost sm" id="ffUndo" disabled>↶ Undo</button><button class="btn ghost sm" id="ffReset2">Reset to sample</button></div></div>
+  <div class="ffnote" id="ffNote" aria-live="polite"></div>`;
+ $$("#ffBoard .ffc").forEach(c=>{const s=c.dataset.s,i=+c.dataset.i;
+  c.querySelectorAll(".ffseg button").forEach(b=>b.onclick=()=>{ffStop();ffSet(s,i,+b.dataset.v)});
+  c.querySelector(".ffseg").addEventListener("keydown",e=>{const k={ArrowRight:1,ArrowUp:1,ArrowLeft:-1,ArrowDown:-1}[e.key];if(k){e.preventDefault();ffSet(s,i,FF[s][i].v+k);const b=c.querySelector(`.ffseg [data-v="${FF[s][i].v}"]`);b&&b.focus()}});
+  const del=c.querySelector("[data-del]");if(del)del.onclick=()=>{FF[s].splice(i,1);ffSave();renderFF()};
+  const hl=on=>{c.classList.toggle("hov",on);const a=$(`#ffBoard .ffa[data-s="${s}"][data-i="${i}"]`);a&&a.classList.toggle("hov",on)};c.onmouseenter=()=>hl(true);c.onmouseleave=()=>hl(false)});
+ $$("#ffBoard .ffa").forEach(a=>{const s=a.dataset.s,i=+a.dataset.i,c=$(`#ffBoard .ffc[data-s="${s}"][data-i="${i}"]`);a.onmouseenter=()=>{a.classList.add("hov");c.classList.add("hov")};a.onmouseleave=()=>{a.classList.remove("hov");c.classList.remove("hov")};a.title=FF[s][i].n});
+ $$("#ffBoard [data-sc]").forEach(b=>b.onclick=()=>ffSim(b.dataset.sc));
+ $("#ffUndo").onclick=()=>{if(!ffUndo)return;ffStop();FF=ffUndo;ffUndo=null;ffSave();renderFF();ffLog();$("#ffNote").innerHTML=`<p class="mini muted">Scenario undone.</p>`};
+ $("#ffReset2").onclick=()=>{ffStop();ffUndo=JSON.parse(JSON.stringify(FF));FF=ffSample();ffSave();ffHist=[];LS.set("ffh",ffHist);renderFF();$("#ffNote").innerHTML="";toast("Sample forces restored")};
+ $("#ffCtrl").innerHTML=`<h4 style="margin-top:0">How to read and use the board</h4><ul class="tidy mini"><li><b>The gold line is the current culture.</b> Driving forces (left) push it right, towards lending well; restraining forces (right) push it left. It settles where they balance.</li><li><b>Arrow length is strength.</b> Set each force from 0 to 5 with its buttons (or arrow keys). Hover a card to highlight its arrow.</li><li><b>Watch both readouts.</b> <i>Movement</i> is where the culture settles; <i>Tension</i> is how much push and pull people experience. Good change raises movement without raising tension.</li><li><b>Run the experiments</b> to see why weakening restrainers beats pushing harder.</li></ul>`;
  wrapTerms($("#ffBoard"));ffUpdate()};
-function ffUpdate(){const {d,r}=ffBal(),bal=d-r;
- $$("#ffBoard .ffr").forEach(el=>{const f=FF[el.dataset.s][+el.dataset.i];if(!f)return;el.querySelector(".fl").style.width=f.v*20+"%";el.querySelector(".fl").style.setProperty("--sp",(2.4-f.v*.38)+"s");el.querySelector(".ffv").textContent=f.v;el.querySelector(".ffbar").setAttribute("aria-valuenow",f.v);el.classList.toggle("zero",f.v===0);el.classList.toggle("strong",f.v>=4);el.querySelectorAll(".pips span").forEach((p,k)=>p.classList.toggle("on",k<f.v))});
+function ffSet(s,i,v){if(!FF[s][i])return;v=clamp(v,0,5);if(FF[s][i].v===v)return;FF[s][i].v=v;ffSave();ffUpdate();ffLog();cockpit()}
+function ffLog(){const {bal}=ffT();ffHist.push(bal);if(ffHist.length>30)ffHist=ffHist.slice(-30);LS.set("ffh",ffHist);ffSpark()}
+function ffSpark(){const s=$("#ffSpark");if(!s)return;const h=ffHist.length?ffHist:[ffT().bal];const mx=Math.max(10,...h.map(Math.abs));const pts=h.map((v,k)=>[h.length<2?100:k/(h.length-1)*196+2,27-v/mx*23]);
+ s.innerHTML=`<line x1="0" y1="27" x2="200" y2="27" stroke="${cssv("--line2")}" stroke-dasharray="3 3"/><polyline points="${pts.map(p=>p.join(",")).join(" ")}" fill="none" stroke="${cssv("--brass")}" stroke-width="2.2" vector-effect="non-scaling-stroke"/>${pts.length?`<circle cx="${pts[pts.length-1][0]}" cy="${pts[pts.length-1][1]}" r="3.5" fill="${cssv("--brass")}"/>`:""}`}
+function ffUpdate(){if(!$("#ffBoard"))return;const {d,r,bal,t,max}=ffT();
+ const shift=clamp(bal*2.6,-34,34);$("#ffLine").style.left=`calc(50% + ${shift}%)`;
+ $$("#ffBoard .ffa").forEach(a=>{const f=FF[a.dataset.s][+a.dataset.i];if(!f)return;const w=f.v*9;a.style.setProperty("--w",w+"%");a.style.setProperty("--x",`calc(50% + ${shift}%)`);a.style.setProperty("--sp",(2.6-f.v*.42)+"s");a.classList.toggle("zero",f.v===0)});
+ $$("#ffBoard .ffc").forEach(c=>{const f=FF[c.dataset.s][+c.dataset.i];if(!f)return;c.querySelectorAll(".ffseg button").forEach(b=>{const on=+b.dataset.v===f.v;b.classList.toggle("on",on);b.classList.toggle("fill",+b.dataset.v<=f.v&&+b.dataset.v>0);b.setAttribute("aria-checked",on);b.tabIndex=on?0:-1})});
  $("#ffDs").textContent=d;$("#ffRs").textContent=r;$("#ffBal").textContent=(bal>0?"+":"")+bal;
- const pos=clamp(50+bal*2.2,5,95);$("#ffPuck").style.left=pos+"%";$("#ffPuck").className=bal>2?"g":bal>=-2?"a":"r";$("#ffBlock").style.transform=`translateX(${clamp(bal*3,-40,40)}px) rotate(${clamp(bal*.6,-8,8)}deg)`;
- const top=[...FF.restrain].sort((a,b)=>b.v-a.v).slice(0,2).filter(t=>t.v>0);const o=$("#ffOut");o.className="verdict "+(bal>2?"rag-g":bal>=-2?"rag-a":"rag-r");
- o.innerHTML=`<div class="ffo"><div><span>Driving</span><b>${d}</b></div><div><span>Restraining</span><b>${r}</b></div><div><span>Balance</span><b>${bal>0?"+":""}${bal}</b></div></div><p style="margin:10px 0 6px">${bal>2?"<b>The change has momentum.</b> Protect it by removing the strongest restrainers before they reassert themselves.":bal>=-2?"<b>Finely balanced.</b> Pushing harder will mostly raise resistance; weaken a restrainer instead.":"<b>The current culture is firmly held.</b> Pressure alone will not move it."}</p>${top.length?`<p style="margin:0 0 6px">Start by weakening <b>${top.map(t=>esc(t.n.toLowerCase())).join("</b> and <b>")}</b>.</p><div class="tagrow">${[...new Set(top.flatMap(t=>t.iv||[]))].map(id=>`<button class="tagbtn" data-iv="${id}">${INTERVENTIONS.find(v=>v.id===id).t}</button>`).join("")}</div>`:""}`;
+ const pp=clamp(50+bal*2,4,96);$("#ffPuck").style.left=pp+"%";$("#ffPuck").className="ffpuck "+(bal>2?"g":bal>=-2?"a":"r");
+ const tp=t/max;$("#ffTen").style.width=tp*100+"%";$("#ffTen").className=tp>.75?"r":tp>.5?"a":"g";$("#ffTenT").textContent=`${t} of ${max}`;$("#ffTenL").textContent=tp>.75?"very high — stressful and unstable":tp>.5?"elevated":"manageable";
+ ffSpark();
+ const top=[...FF.restrain].sort((a,b)=>b.v-a.v).slice(0,2).filter(x=>x.v>0);const o=$("#ffOut");o.className="verdict "+(bal>2?"rag-g":bal>=-2?"rag-a":"rag-r");
+ o.innerHTML=`<div class="ffo"><div><span>Driving</span><b>${d}</b></div><div><span>Restraining</span><b>${r}</b></div><div><span>Movement</span><b>${bal>0?"+":""}${bal}</b></div><div><span>Tension</span><b>${t}</b></div></div><p style="margin:12px 0 6px">${bal>2?"<b>The change has momentum.</b> Protect it by removing the strongest restrainers before they reassert themselves.":bal>=-2?"<b>Finely balanced.</b> Pushing harder will mostly raise tension; weaken a restrainer instead.":"<b>The current culture is firmly held.</b> More pressure will raise tension, not movement."}${tp>.75?" <b>Tension is very high</b> — expect fatigue, defensiveness and quiet workarounds.":""}</p>${top.length?`<p style="margin:0 0 6px">Start by weakening <b>${top.map(x=>esc(x.n.toLowerCase())).join("</b> and <b>")}</b>.</p><div class="tagrow">${[...new Set(top.flatMap(x=>x.iv||[]))].map(id=>`<button class="tagbtn" data-iv="${id}">${INTERVENTIONS.find(v=>v.id===id).t}</button>`).join("")}</div>`:""}`;
  $$("#ffOut [data-iv]").forEach(b=>b.onclick=()=>openIV(b.dataset.iv))}
-function ffStop(){clearTimeout(ffSimT);ffSimT=null}
-function ffSim(kind){ffStop();const before=ffBal();const steps=[];
- if(kind==="weaken"){[...FF.restrain].map((f,i)=>({f,i})).sort((a,b)=>b.f.v-a.f.v).slice(0,2).forEach(({i})=>{steps.push(["restrain",i,-1],["restrain",i,-1])})}
- else{FF.drive.forEach((f,i)=>steps.push(["drive",i,1]));FF.drive.forEach((f,i)=>steps.push(["drive",i,1]));FF.restrain.forEach((f,i)=>steps.push(["restrain",i,1]))}
- let k=0;const n=$("#ffNote");n.innerHTML=`<span class="mini muted">${kind==="weaken"?"Weakening the two strongest restraining forces…":"Adding pressure to every driving force…"}</span>`;
- const go=()=>{if(k>=steps.length){const a=ffBal(),db=(a.d-a.r)-(before.d-before.r);n.innerHTML=kind==="weaken"?`<div class="exp"><b>Result: balance ${db>0?"+":""}${db}.</b> Two changes to restrainers moved the culture with no extra pressure, no extra effort from staff and nothing for anyone to resist. This is Lewin's central insight.</div>`:`<div class="flag"><b>Result: balance ${db>0?"+":""}${db} — despite ${FF.drive.length*2} points of extra pressure.</b> Pushing harder provoked counter-pressure: every restraining force grew as people defended the status quo. Tension rose; the culture barely moved.</div>`;LS.set("ff",FF);cockpit();return}
-  const [s,i,dv]=steps[k++];const f=FF[s][i];if(f){f.v=clamp(f.v+dv,0,5);const el=$(`#ffBoard .ffr[data-s="${s}"][data-i="${i}"]`);if(el){el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),500)}}ffUpdate();ffSimT=setTimeout(go,kind==="weaken"?420:200)};go()}
+function ffStop(){clearTimeout(ffSimT);ffSimT=null;$$("#ffBoard [data-sc]").forEach(b=>b.disabled=false)}
+function ffSim(kind){ffStop();ffUndo=JSON.parse(JSON.stringify(FF));const before=ffT(),steps=[];
+ const topR=FF.restrain.map((f,i)=>({f,i})).sort((a,b)=>b.f.v-a.f.v).slice(0,2);
+ if(kind==="weaken"||kind==="both")topR.forEach(({i})=>steps.push(["restrain",i,-1,"weaken"],["restrain",i,-1,"weaken"]));
+ if(kind==="push"){FF.drive.forEach((f,i)=>steps.push(["drive",i,1,"push"],["drive",i,1,"push"]));FF.restrain.forEach((f,i)=>steps.push(["restrain",i,1,"react"]))}
+ if(kind==="both"){const lo=FF.drive.map((f,i)=>({f,i})).sort((a,b)=>a.f.v-b.f.v)[0];if(lo)steps.push(["drive",lo.i,1,"push"])}
+ $$("#ffBoard [data-sc]").forEach(b=>b.disabled=true);$("#ffUndo").disabled=false;
+ const label={weaken:"Weakening a restraining force",push:"Adding pressure to a driving force",react:"Reaction: a restraining force grows as people defend the status quo"};
+ let k=0;const n=$("#ffNote");
+ const go=()=>{if(k>=steps.length){ffStop();const a=ffT();const dm=a.bal-before.bal,dt=a.t-before.t;ffSave();ffLog();cockpit();
+   const msg=kind==="weaken"?`<b>Movement ${dm>=0?"+":""}${dm} with tension ${dt>=0?"+":""}${dt}.</b> The culture moved further and the system relaxed: nothing was added for anyone to resist. This is Lewin's central insight — remove what holds behaviour in place.`:kind==="push"?`<b>Movement only ${dm>=0?"+":""}${dm}, but tension ${dt>=0?"+":""}${dt}.</b> Extra pressure provoked counter-pressure. People feel pushed and pulled; the culture barely moves and is likely to snap back when the pressure stops.`:`<b>Movement ${dm>=0?"+":""}${dm} with tension ${dt>=0?"+":""}${dt}.</b> Weakening restrainers first, then a light nudge, gets movement with the least strain.`;
+   n.innerHTML=`<div class="${kind==="push"?"flag":"exp"}">${msg}</div><table class="fft"><thead><tr><th></th><th>Before</th><th>After</th><th>Change</th></tr></thead><tbody>${[["Driving",before.d,a.d],["Restraining",before.r,a.r],["Movement",before.bal,a.bal],["Tension",before.t,a.t]].map(([l,x,y])=>`<tr><td>${l}</td><td>${x}</td><td>${y}</td><td class="${(l==="Tension"||l==="Restraining")?(y>x?"neg":"pos"):(y>=x?"pos":"neg")}">${y-x>=0?"+":""}${y-x}</td></tr>`).join("")}</tbody></table>`;return}
+  const [s,i,dv,why]=steps[k++];const f=FF[s][i];if(f){const nv=clamp(f.v+dv,0,5);if(nv!==f.v){f.v=nv;const c=$(`#ffBoard .ffc[data-s="${s}"][data-i="${i}"]`),a=$(`#ffBoard .ffa[data-s="${s}"][data-i="${i}"]`);[c,a].forEach(x=>{if(x){x.classList.remove("flash");void x.offsetWidth;x.classList.add("flash")}});n.innerHTML=`<p class="mini"><span class="pill">${k} / ${steps.length}</span> ${label[why]}: <b>${esc(f.n)}</b> → ${nv}</p>`;ffUpdate()}}
+  ffSimT=setTimeout(go,why==="react"?520:380)};go()}
+ffChart=function(){if($("#ffBoard"))ffUpdate()};
 
 /* ---------- MOTORS: kinetic map ---------- */
 let MOTI=LS.get("moti",{0:2,1:2,2:3,3:1});
@@ -3430,7 +3529,7 @@ renderMot=function(){const g=$("#motorGrid");if(g)g.style.display="none";
 
 /* ---------- init ---------- */
 $("#themeBtn").addEventListener("click",()=>{ffUpdate()});
-ffChart=function(){if($("#ffBoard"))ffUpdate()};renderFF();renderMot();
+renderFF();renderMot();
 
 /* =====================================================================
    GLOSSARY v2 + descriptive cross-reference links
